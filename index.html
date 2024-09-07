@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KatolikClip</title>
+    <link rel="icon" href="https://raw.githubusercontent.com/Katolikclip/rohani/main/img/kc.JPG" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: url('https://www.solarsystemscope.com/textures/download/8k_stars_milky_way.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            text-align: center;
+            max-width: 400px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h4 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .link-icons {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+
+        .link-icons a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            transition: 0.3s ease-in-out;
+        }
+
+        .link-icons a:hover {
+            color: #ff4500;
+        }
+
+        .link-icons i {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            h4 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .link-icons i {
+                font-size: 1.5rem;
+            }
+        }
+
+        .notification {
+            font-family: "Playfair Display", serif;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ff4500;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 1000;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .notification p {
+            margin: 0;
+        }
+
+
+
+        .notification.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .footer {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px 0;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            z-index: 1000;
+            text-align: center;
+            color: white;
+        }
+
+        .partner-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .partner-label {
+            flex: 0 0 auto;
+            margin-right: 20px;
+        }
+
+        .partner-label h4 {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .marquee {
+            display: flex;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            width: 100%;
+        }
+
+        .marquee-content {
+            display: flex;
+            white-space: nowrap;
+            animation: marquee 30s linear infinite;
+        }
+
+        .marquee-content a {
+            display: inline-block;
+            margin-right: 30px;
+        }
+
+        .marquee-content img {
+            height: 60px;
+        }
+
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .marquee img {
+                height: 40px;
+            }
+
+            .partner-label h4 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container floating">
+        <h4 id="typing"></h4>
+        <p><span style="color: #ff4500;"><b>KatolikClip</b></span> berkomitmen untuk menjadi wadah bagi para kreator
+            Katolik,
+            terutama mereka yang baru
+            atau ingin memulai perjalanan'nya sebagai content creator.
+        </p>
+        <p>
+            <span style="color: #5500ff;"><b>KatolikClip</b></span> membuka kesempatan
+            bagi setiap individu yang ingin berkontribusi dalam pelayanan digital. Ayo, bergabunglah dan buat perbedaan
+            bersama kami.
+        </p>
+
+        <div class="link-icons">
+            <a href="https://katolikclip.github.io/owner-profile" target="_blank">
+                <i class="fas fa-user-tie"></i>Owner
+            </a>
+            <a href="https://katolikclip.github.io/musik/" target="_blank">
+                <i class="fas fa-music"></i>Musik
+            </a>
+            <a href="https://katolikclip.github.io/kuis" target="_blank">
+                <i class="fas fa-question-circle"></i>Kuis
+            </a>
+            <a href="https://katolikclip.github.io/quotes/" target="_blank">
+                <i class="fas fa-quote-left"></i>Quote
+            </a>
+        </div>
+        <!-- Notification Popup -->
+        <div id="notification" class="notification">
+            <p>Tidak perlu mencari tau siapa pemilik akun ini!! Saya melayani dengan sepenuh hati tanpa mengharapkan
+                pengakuan atau pujian. Bagi saya, yang terpenting
+                adalah memberikan yang terbaik, bukan dikenal sebagai siapa saya.</p>
+        </div>
+    </div>
+
+    <script>
+        const _0x175b48 = _0x5bc0; (function (_0x12837f, _0x4f6c89) { const _0x21750e = _0x5bc0, _0x4fc7cf = _0x12837f(); while (!![]) { try { const _0x2f6daa = parseInt(_0x21750e(0x1ae)) / 0x1 * (-parseInt(_0x21750e(0x1b0)) / 0x2) + parseInt(_0x21750e(0x199)) / 0x3 * (-parseInt(_0x21750e(0x198)) / 0x4) + -parseInt(_0x21750e(0x19a)) / 0x5 + parseInt(_0x21750e(0x1a6)) / 0x6 + parseInt(_0x21750e(0x19d)) / 0x7 * (-parseInt(_0x21750e(0x1ab)) / 0x8) + parseInt(_0x21750e(0x19e)) / 0x9 + parseInt(_0x21750e(0x1aa)) / 0xa; if (_0x2f6daa === _0x4f6c89) break; else _0x4fc7cf['push'](_0x4fc7cf['shift']()); } catch (_0x10e307) { _0x4fc7cf['push'](_0x4fc7cf['shift']()); } } }(_0x1d49, 0xb7635)); const texts = [_0x175b48(0x1ad), _0x175b48(0x1a0)]; let count = 0x0, index = 0x0, currentText = '', letter = '', isDeleting = ![]; (function type() { const _0x2766d4 = _0x175b48; currentText = texts[count]; !isDeleting ? letter = currentText['slice'](0x0, ++index) : letter = currentText[_0x2766d4(0x1b1)](0x0, --index); document[_0x2766d4(0x1a9)](_0x2766d4(0x1a8))[_0x2766d4(0x1a2)] = letter; if (!isDeleting && letter['length'] === currentText[_0x2766d4(0x1ac)]) setTimeout(() => isDeleting = !![], 0x3e8); else isDeleting && letter[_0x2766d4(0x1ac)] === 0x0 && (isDeleting = ![], count = (count + 0x1) % texts[_0x2766d4(0x1ac)]); setTimeout(type, isDeleting ? 0x64 : 0x96); }()); function showNotification() { const _0x23916a = _0x175b48, _0x2f9bc1 = document[_0x23916a(0x1a9)]('notification'); _0x2f9bc1['classList'][_0x23916a(0x1af)](_0x23916a(0x19b)), setTimeout(() => { const _0x224637 = _0x23916a; _0x2f9bc1[_0x224637(0x1a7)]['remove'](_0x224637(0x19b)); }, 0x1f40); } document[_0x175b48(0x1a4)](_0x175b48(0x1a5))[_0x175b48(0x1b2)](_0x175b48(0x1a3), function (_0x3e3abd) { const _0x39efcd = _0x175b48; _0x3e3abd[_0x39efcd(0x1a1)](), showNotification(); }); function _0x1d49() { const _0x4ba223 = ['classList', 'typing', 'getElementById', '18701280VDiJrI', '464xhEhjE', 'length', 'Hallo', '393181ixZAIw', 'add', '4yVlxVm', 'slice', 'addEventListener', '39316CyBfTx', '324hdOCGP', '6681895XugxtY', 'show', 'backgroundMusic', '11494UEoCjd', '8600445AdnDyb', 'play', 'Selamat\x20Datang', 'preventDefault', 'textContent', 'click', 'querySelector', '.link-icons\x20a[href=\x22https://katolikclip.github.io/owner-profile\x22]', '7229598rpynoM']; _0x1d49 = function () { return _0x4ba223; }; return _0x1d49(); } const ownerButton = document['querySelector'](_0x175b48(0x1a5)); function _0x5bc0(_0x16b52c, _0x101890) { const _0x1d491a = _0x1d49(); return _0x5bc0 = function (_0x5bc08b, _0x5141fe) { _0x5bc08b = _0x5bc08b - 0x198; let _0x7a59b8 = _0x1d491a[_0x5bc08b]; return _0x7a59b8; }, _0x5bc0(_0x16b52c, _0x101890); } ownerButton[_0x175b48(0x1b2)](_0x175b48(0x1a3), function (_0x2eb551) { const _0x2d3675 = _0x175b48; _0x2eb551[_0x2d3675(0x1a1)](), document[_0x2d3675(0x1a9)](_0x2d3675(0x19c))[_0x2d3675(0x19f)](); });
+    </script>
+
+    <audio id="backgroundMusic" src="https://github.com/Katolikclip/rohani/raw/main/pj/hariIniKurasaBahagia.mp3"
+        type="audio/mp3" loop></audio>
+
+    <footer class="footer">
+        <div class="partner-container">
+            <div class="partner-label">
+                <h4>Thanks For</h4>
+            </div>
+            <div class="marquee">
+                <div class="marquee-content">
+                    <a href="https://www.instagram.com/ruangkatekese.ig" target="_blank">
+                        <img src="https://i.ibb.co/mXbmT1T/D6-C5940-A-4013-499-E-9218-E268-B729413-E.jpg"
+                            alt="ruangkatekese">
+                    </a>
+                    <a href="https://www.instagram.com/sahabatktm" target="_blank">
+                        <img src="https://i.ibb.co/7NLQXt8/3-EDB93-D6-F50-F-4919-BFB1-CF141131-D994.png"
+                            alt="sahabatktm">
+                    </a>
+                    <a href="https://www.instagram.com/eleinemagdalenabooks" target="_blank">
+                        <img src="https://i.ibb.co/wsvQ89M/C844335-B-3-BE8-4-C2-E-8-C1-C-B27-C88-E9-DB55.png"
+                            alt="eleinemagdalenabooks">
+                    </a>
+                    <a href="https://www.instagram.com/kesatriakatolik" target="_blank">
+                        <img src="https://i.ibb.co/3rT1yM5/DE1-C0-BDC-4673-45-F8-92-AA-C530638-F6-F59.png"
+                            alt="kesatriakatolik">
+                    </a>
+                    <a href="https://www.instagram.com/ignasiusrian" target="_blank">
+                        <img src="https://i.ibb.co/z7bVw88/509950-FB-CFE9-436-D-AEAA-C29891-C1-EF25.png"
+                            alt="ignasiusrian">
+                    </a>
+                    <a href="https://www.instagram.com/acara_rohani_katolik" target="_blank">
+                        <img src="https://i.ibb.co/gMsjFXr/010362-DC-0-B4-F-469-E-A462-188-EA9563-ECB.png"
+                            alt="acararohanikatolik">
+                    </a>
+                    <a href="https://www.instagram.com/mudikanusantara.ca" target="_blank">
+                        <img src="https://i.ibb.co/L1BCBhy/806-AFE4-E-6-BB4-47-A9-90-DE-8-B8-DDA4120-C8.png"
+                            alt="mudikanusantara">
+                    </a>
+                    <!-- Duplicate the images here -->
+                    <a href="https://www.instagram.com/ruangkatekese.ig" target="_blank">
+                        <img src="https://i.ibb.co/mXbmT1T/D6-C5940-A-4013-499-E-9218-E268-B729413-E.jpg"
+                            alt="ruangkatekese">
+                    </a>
+                    <a href="https://www.instagram.com/sahabatktm" target="_blank">
+                        <img src="https://i.ibb.co/7NLQXt8/3-EDB93-D6-F50-F-4919-BFB1-CF141131-D994.png"
+                            alt="sahabatktm">
+                    </a>
+                    <a href="https://www.instagram.com/eleinemagdalenabooks" target="_blank">
+                        <img src="https://i.ibb.co/wsvQ89M/C844335-B-3-BE8-4-C2-E-8-C1-C-B27-C88-E9-DB55.png"
+                            alt="eleinemagdalenabooks">
+                    </a>
+                    <a href="https://www.instagram.com/kesatriakatolik" target="_blank">
+                        <img src="https://i.ibb.co/3rT1yM5/DE1-C0-BDC-4673-45-F8-92-AA-C530638-F6-F59.png"
+                            alt="kesatriakatolik">
+                    </a>
+                    <a href="https://www.instagram.com/ignasiusrian" target="_blank">
+                        <img src="https://i.ibb.co/z7bVw88/509950-FB-CFE9-436-D-AEAA-C29891-C1-EF25.png"
+                            alt="ignasiusrian">
+                    </a>
+                    <a href="https://www.instagram.com/acara_rohani_katolik" target="_blank">
+                        <img src="https://i.ibb.co/gMsjFXr/010362-DC-0-B4-F-469-E-A462-188-EA9563-ECB.png"
+                            alt="acararohanikatolik">
+                    </a>
+                    <a href="https://www.instagram.com/mudikanusantara.ca" target="_blank">
+                        <img src="https://i.ibb.co/L1BCBhy/806-AFE4-E-6-BB4-47-A9-90-DE-8-B8-DDA4120-C8.png"
+                            alt="mudikanusantara">
+                    </a>
+                </div>
+            </div>
+
+    </footer>
+</body>
+
+</html>
